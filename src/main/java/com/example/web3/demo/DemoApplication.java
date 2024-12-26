@@ -1,3 +1,5 @@
+/* (C) 2024 */ 
+
 package com.example.web3.demo;
 
 import org.springframework.boot.SpringApplication;
@@ -8,8 +10,7 @@ import org.springframework.scheduling.annotation.Async;
 @Async
 public class DemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
 }

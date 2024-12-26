@@ -1,3 +1,5 @@
+/* (C) 2024 */ 
+
 package com.example.web3.demo.configuration;
 
 import lombok.Data;

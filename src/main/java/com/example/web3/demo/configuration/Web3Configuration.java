@@ -1,5 +1,10 @@
+/* (C) 2024 */ 
+
 package com.example.web3.demo.configuration;
 
+import java.io.IOException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +14,6 @@ import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.methods.response.Web3ClientVersion;
 import org.web3j.protocol.http.HttpService;
 
-import java.io.IOException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-
 @Configuration
 @Slf4j
 public class Web3Configuration implements DisposableBean {
@@ -21,11 +22,11 @@ public class Web3Configuration implements DisposableBean {
     private Web3Properties web3Properties;
 
     @Bean
-    public Web3j web3j(){
+    public Web3j web3j() {
         //
         final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(10);
         // HTTPService or UnixIpcService
-        Web3j web3j = Web3j.build(new HttpService(web3Properties.getUrl()),1000, scheduler);
+        Web3j web3j = Web3j.build(new HttpService(web3Properties.getUrl()), 1000, scheduler);
         //
         try {
             Web3ClientVersion web3ClientVersion = web3j.web3ClientVersion().send();

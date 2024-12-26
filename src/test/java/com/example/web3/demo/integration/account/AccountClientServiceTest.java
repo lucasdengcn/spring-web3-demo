@@ -1,23 +1,16 @@
+/* (C) 2024 */ 
+
 package com.example.web3.demo.integration.account;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import com.example.web3.demo.model.WalletAccount;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.web3j.crypto.WalletFile;
-import org.web3j.crypto.WalletUtils;
-import org.web3j.crypto.exception.CipherException;
 import org.web3j.utils.Convert;
-
-import java.io.File;
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class AccountClientServiceTest {
@@ -29,17 +22,18 @@ class AccountClientServiceTest {
 
     @Test
     void should_get_account_balance_correct() {
-        WalletAccount walletAccount = WalletAccount.builder().privateKey(testKey).build();
+        WalletAccount walletAccount =
+                WalletAccount.builder().privateKey(testKey).build();
         BigInteger balance = accountClientService.GetAccountBalanceInWei(walletAccount);
         assertTrue(balance.compareTo(BigInteger.ZERO) > 0);
     }
 
     @Test
     void should_get_account_balance_in_ether_correct() {
-        WalletAccount walletAccount = WalletAccount.builder().privateKey(testKey).build();
+        WalletAccount walletAccount =
+                WalletAccount.builder().privateKey(testKey).build();
         BigInteger balance = accountClientService.GetAccountBalanceInWei(walletAccount);
         BigDecimal etherBalance = Convert.fromWei(balance.toString(), Convert.Unit.ETHER);
         assertTrue(etherBalance.compareTo(BigDecimal.ZERO) > 0);
     }
-
 }

@@ -1,14 +1,15 @@
+/* (C) 2024 */ 
+
 package com.example.web3.demo.wallet;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.io.File;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.web3j.crypto.*;
 import org.web3j.crypto.exception.CipherException;
-
-import java.io.File;
-
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 public class WalletUtilsTest {
@@ -19,7 +20,7 @@ public class WalletUtilsTest {
     private WalletService walletService;
 
     @Test
-    void step1_should_generate_mnemonic_success(){
+    void step1_should_generate_mnemonic_success() {
         String mnemonic = walletService.generateMnemonic();
         System.out.printf("%s\n", mnemonic);
     }
@@ -35,7 +36,7 @@ public class WalletUtilsTest {
     }
 
     @Test
-    void step3_should_generate_wallet_success(){
+    void step3_should_generate_wallet_success() {
         try {
             String mnemonic = walletService.generateMnemonic();
             ECKeyPair keyPair = walletService.generateEcKeyPairWithMnemonic(mnemonic, testPwdFake);
@@ -76,5 +77,4 @@ public class WalletUtilsTest {
             throw new RuntimeException(e);
         }
     }
-
 }

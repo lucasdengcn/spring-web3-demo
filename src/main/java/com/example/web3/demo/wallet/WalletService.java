@@ -1,7 +1,12 @@
+/* (C) 2024 */ 
+
 package com.example.web3.demo.wallet;
+
+import static org.web3j.crypto.Hash.sha256;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.security.SecureRandom;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
@@ -11,10 +16,6 @@ import org.web3j.crypto.Wallet;
 import org.web3j.crypto.WalletFile;
 import org.web3j.crypto.exception.CipherException;
 
-import java.security.SecureRandom;
-
-import static org.web3j.crypto.Hash.sha256;
-
 @Slf4j
 @Service
 public class WalletService {
@@ -22,19 +23,17 @@ public class WalletService {
     private static final SecureRandom secureRandom = new SecureRandom();
     private final ObjectMapper objectMapper;
 
-    public WalletService(ObjectMapper objectMapper){
+    public WalletService(ObjectMapper objectMapper) {
         this.objectMapper = objectMapper;
     }
 
-    @NotNull
-    public String generateMnemonic() {
+    @NotNull public String generateMnemonic() {
         byte[] initialEntropy = new byte[16];
         secureRandom.nextBytes(initialEntropy);
         return MnemonicUtils.generateMnemonic(initialEntropy);
     }
 
-    @NotNull
-    public ECKeyPair generateEcKeyPairWithMnemonic(String mnemonic, String password) {
+    @NotNull public ECKeyPair generateEcKeyPairWithMnemonic(String mnemonic, String password) {
         byte[] seed = MnemonicUtils.generateSeed(mnemonic, password);
         return ECKeyPair.create(sha256(seed));
     }
@@ -63,5 +62,4 @@ public class WalletService {
         String json = objectMapper.writeValueAsString(walletFile);
         return json;
     }
-
 }

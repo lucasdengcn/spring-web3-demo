@@ -1,3 +1,5 @@
+/* (C) 2024 */ 
+
 package com.example.web3.demo.integration.filter;
 
 import io.reactivex.disposables.Disposable;
@@ -18,7 +20,7 @@ public class TransactionFilter implements DisposableBean {
         this.disposable = subscribe();
     }
 
-    public Disposable subscribe(){
+    public Disposable subscribe() {
         return web3j.transactionFlowable().subscribe(block -> {
             log.info("transaction: {}", block);
         });

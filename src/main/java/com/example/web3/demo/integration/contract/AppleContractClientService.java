@@ -1,9 +1,15 @@
+/* (C) 2024 */ 
+
 package com.example.web3.demo.integration.contract;
 
 import com.example.demo.contracts.applecontractv2.AppleContractV2;
 import com.example.web3.demo.integration.CredentialUtils;
 import com.example.web3.demo.model.WalletAccount;
 import io.reactivex.disposables.Disposable;
+import java.io.IOException;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
@@ -12,7 +18,6 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.stereotype.Service;
 import org.web3j.abi.EventEncoder;
 import org.web3j.crypto.Credentials;
-import org.web3j.crypto.WalletUtils;
 import org.web3j.crypto.exception.CipherException;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.DefaultBlockParameterName;
@@ -20,11 +25,6 @@ import org.web3j.protocol.core.methods.request.EthFilter;
 import org.web3j.protocol.core.methods.response.Log;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
 import org.web3j.tx.gas.DefaultGasProvider;
-
-import java.io.IOException;
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
 
 @Slf4j
 @Service
@@ -47,13 +47,14 @@ public class AppleContractClientService implements DisposableBean {
     /**
      * listen price changed event on the networks
      */
-    private void SubscribePriceChangedEvents(){
-        EthFilter filter = new EthFilter(
-                DefaultBlockParameterName.LATEST, DefaultBlockParameterName.LATEST, this.contractAddress);
+    private void SubscribePriceChangedEvents() {
+        EthFilter filter =
+                new EthFilter(DefaultBlockParameterName.LATEST, DefaultBlockParameterName.LATEST, this.contractAddress);
         filter.addSingleTopic(EventEncoder.encode(AppleContractV2.PRICECHANGEDSUCCESS_EVENT));
         //
         Disposable disposable = web3j.ethLogFlowable(filter).subscribe(event -> {
-            AppleContractV2.PriceChangedSuccessEventResponse eventResponse = AppleContractV2.getPriceChangedSuccessEventFromLog(event);
+            AppleContractV2.PriceChangedSuccessEventResponse eventResponse =
+                    AppleContractV2.getPriceChangedSuccessEventFromLog(event);
             log.info("PriceChangedSuccessEvent: {}, {}", eventResponse.newPrice, eventResponse.oldPrice);
             // store event into db.
         });
@@ -68,8 +69,7 @@ public class AppleContractClientService implements DisposableBean {
      * @throws CipherException
      * @throws IOException
      */
-    @NotNull
-    private AppleContractV2 buildContractInstance(WalletAccount walletAccount) throws CipherException, IOException {
+    @NotNull private AppleContractV2 buildContractInstance(WalletAccount walletAccount) throws CipherException, IOException {
         Credentials credentials = CredentialUtils.getWalletCredentials(walletAccount);
         return AppleContractV2.load(contractAddress, web3j, credentials, new DefaultGasProvider());
     }
@@ -80,7 +80,7 @@ public class AppleContractClientService implements DisposableBean {
      * @param walletAccount
      * @return
      */
-    public Pair<BigInteger, BigInteger> GetAppleCount(WalletAccount walletAccount){
+    public Pair<BigInteger, BigInteger> GetAppleCount(WalletAccount walletAccount) {
         try {
             AppleContractV2 appleContractV2 = buildContractInstance(walletAccount);
             BigInteger appleCount = appleContractV2.appleCount().send();
@@ -99,7 +99,7 @@ public class AppleContractClientService implements DisposableBean {
      * @param walletAccount
      * @return
      */
-    public BigInteger GetPrice1(WalletAccount walletAccount){
+    public BigInteger GetPrice1(WalletAccount walletAccount) {
         try {
             AppleContractV2 appleContractV2 = buildContractInstance(walletAccount);
             return appleContractV2.price1().send();
@@ -116,7 +116,8 @@ public class AppleContractClientService implements DisposableBean {
      * @param price1
      * @return
      */
-    public AppleContractV2.PriceChangedSuccessEventResponse ChangePrice(WalletAccount walletAccount, BigInteger price1) {
+    public AppleContractV2.PriceChangedSuccessEventResponse ChangePrice(
+            WalletAccount walletAccount, BigInteger price1) {
         try {
             AppleContractV2 appleContractV2 = buildContractInstance(walletAccount);
             TransactionReceipt receipt = appleContractV2.changePrice(price1).send();

@@ -1,11 +1,12 @@
+/* (C) 2024 */ 
+
 package com.example.web3.demo.integration;
 
 import com.example.web3.demo.model.WalletAccount;
+import java.io.IOException;
 import org.web3j.crypto.Credentials;
 import org.web3j.crypto.WalletUtils;
 import org.web3j.crypto.exception.CipherException;
-
-import java.io.IOException;
 
 public class CredentialUtils {
 
@@ -22,5 +23,4 @@ public class CredentialUtils {
         }
         return credentials;
     }
-
 }
