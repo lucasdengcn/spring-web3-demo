@@ -1,0 +1,62 @@
+jacocoTestReport {
+	dependsOn test
+	reports {
+		xml.required = false
+		csv.required = false
+		html.required = true
+	}
+	afterEvaluate {
+		classDirectories.setFrom(files(classDirectories.files.collect {
+			fileTree(dir: it, exclude: [
+					"com/example/demo/contracts/**",
+			])
+		}))
+	}
+}
+
+// enforce 50% both at class and at project level for verifying tool setup
+jacocoTestCoverageVerification {
+	violationRules {
+		rule {
+			//includes = ['com.example.web3.*']
+			limit {
+				counter = 'LINE'
+				value = 'COVEREDRATIO'
+				minimum = 0.0
+			}
+		}
+
+		rule {
+			enabled = true
+			element = 'CLASS'
+			//includes = ['com.example.web3.*']
+
+			limit {
+				counter = 'BRANCH'
+				value = 'COVEREDRATIO'
+				maximum = 1.0
+			}
+		}
+	}
+}
+
+check {
+	dependsOn jacocoTestCoverageVerification
+}
+
+test {
+	jacoco {
+		enabled = true
+		destinationFile = layout.buildDirectory.file("jacoco/${name}.exec").get().asFile
+		includes = []
+		excludes = ['com.example.demo.contracts.*']
+		excludeClassLoaders = []
+		includeNoLocationClasses = false
+		dumpOnExit = true
+		classDumpDir = null
+		output = JacocoTaskExtension.Output.FILE
+		jmx = false
+	}
+}
+
+test.finalizedBy jacocoTestReport

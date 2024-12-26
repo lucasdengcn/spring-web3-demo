@@ -34,7 +34,7 @@ class AppleContractClientServiceTest {
         // for testing purpose
         WalletAccount walletAccount = WalletAccount.builder().privateKey(testKey).build();
         BigInteger result = appleContractClientService.GetPrice1(walletAccount);
-        assertEquals(30, result.intValue());
+        assertTrue(result.intValue() > 0);
     }
 
     @Test

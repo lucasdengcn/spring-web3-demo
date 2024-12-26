@@ -31,7 +31,7 @@ class AccountClientServiceTest {
     void should_get_account_balance_correct() {
         WalletAccount walletAccount = WalletAccount.builder().privateKey(testKey).build();
         BigInteger balance = accountClientService.GetAccountBalanceInWei(walletAccount);
-        assertTrue(balance.intValue() > 0);
+        assertTrue(balance.compareTo(BigInteger.ZERO) > 0);
     }
 
     @Test
@@ -39,7 +39,7 @@ class AccountClientServiceTest {
         WalletAccount walletAccount = WalletAccount.builder().privateKey(testKey).build();
         BigInteger balance = accountClientService.GetAccountBalanceInWei(walletAccount);
         BigDecimal etherBalance = Convert.fromWei(balance.toString(), Convert.Unit.ETHER);
-        assertTrue(etherBalance.doubleValue() > 0);
+        assertTrue(etherBalance.compareTo(BigDecimal.ZERO) > 0);
     }
 
 }
