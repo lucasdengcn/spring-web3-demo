@@ -1,0 +1,90 @@
+2024-12-26T09:04:26.123+08:00  INFO 16573 --- [web3-demo] [Test worker] c.e.web3.demo.DemoApplicationTests       : Starting DemoApplicationTests using Java 21.0.1 with PID 16573 (started by yamingdeng in /Users/yamingdeng/Projects/web3/spring-web3-demo)
+2024-12-26T09:04:26.125+08:00  INFO 16573 --- [web3-demo] [Test worker] c.e.web3.demo.DemoApplicationTests       : No active profile set, falling back to 1 default profile: "default"
+2024-12-26T09:04:27.507+08:00  INFO 16573 --- [web3-demo] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-26T09:04:27.536+08:00  INFO 16573 --- [web3-demo] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 JPA repository interfaces.
+2024-12-26T09:04:29.039+08:00  INFO 16573 --- [web3-demo] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-26T09:04:29.206+08:00  INFO 16573 --- [web3-demo] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:web3demo.db user=SA
+2024-12-26T09:04:29.209+08:00  INFO 16573 --- [web3-demo] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-26T09:04:29.594+08:00  INFO 16573 --- [web3-demo] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-26T09:04:29.856+08:00  INFO 16573 --- [web3-demo] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T09:04:30.223+08:00  WARN 16573 --- [web3-demo] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-26T09:04:31.877+08:00  INFO 16573 --- [web3-demo] [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2024-12-26T09:04:31.974+08:00  INFO 16573 --- [web3-demo] [Test worker] c.e.web3.demo.DemoApplicationTests       : Started DemoApplicationTests in 6.334 seconds (process running for 7.587)
+2024-12-26T09:04:33.006+08:00  INFO 16573 --- [web3-demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T09:04:33.009+08:00  INFO 16573 --- [web3-demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-26T09:04:33.015+08:00  INFO 16573 --- [web3-demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-26T09:17:26.023+08:00  INFO 18149 --- [web3-demo] [Test worker] c.e.w.d.c.Web3ConfigurationTest          : Starting Web3ConfigurationTest using Java 21.0.1 with PID 18149 (started by yamingdeng in /Users/yamingdeng/Projects/web3/spring-web3-demo)
+2024-12-26T09:17:26.025+08:00  INFO 18149 --- [web3-demo] [Test worker] c.e.w.d.c.Web3ConfigurationTest          : No active profile set, falling back to 1 default profile: "default"
+2024-12-26T09:17:27.501+08:00  INFO 18149 --- [web3-demo] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-26T09:17:27.540+08:00  INFO 18149 --- [web3-demo] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 JPA repository interfaces.
+2024-12-26T09:17:28.649+08:00  INFO 18149 --- [web3-demo] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-26T09:17:28.782+08:00  INFO 18149 --- [web3-demo] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:web3demo.db user=SA
+2024-12-26T09:17:28.785+08:00  INFO 18149 --- [web3-demo] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-26T09:17:29.175+08:00  INFO 18149 --- [web3-demo] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-26T09:17:29.465+08:00  INFO 18149 --- [web3-demo] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T09:17:29.794+08:00  WARN 18149 --- [web3-demo] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-26T09:17:31.437+08:00  INFO 18149 --- [web3-demo] [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2024-12-26T09:17:31.527+08:00  INFO 18149 --- [web3-demo] [Test worker] c.e.w.d.c.Web3ConfigurationTest          : Started Web3ConfigurationTest in 5.958 seconds (process running for 7.327)
+2024-12-26T09:17:32.467+08:00  INFO 18149 --- [web3-demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T09:17:32.470+08:00  INFO 18149 --- [web3-demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-26T09:17:32.475+08:00  INFO 18149 --- [web3-demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-26T09:17:51.873+08:00  INFO 18169 --- [web3-demo] [Test worker] c.e.w.d.c.Web3ConfigurationTest          : Starting Web3ConfigurationTest using Java 21.0.1 with PID 18169 (started by yamingdeng in /Users/yamingdeng/Projects/web3/spring-web3-demo)
+2024-12-26T09:17:51.875+08:00  INFO 18169 --- [web3-demo] [Test worker] c.e.w.d.c.Web3ConfigurationTest          : No active profile set, falling back to 1 default profile: "default"
+2024-12-26T09:17:53.307+08:00  INFO 18169 --- [web3-demo] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-26T09:17:53.339+08:00  INFO 18169 --- [web3-demo] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 JPA repository interfaces.
+2024-12-26T09:17:54.418+08:00  INFO 18169 --- [web3-demo] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-26T09:17:54.547+08:00  INFO 18169 --- [web3-demo] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:web3demo.db user=SA
+2024-12-26T09:17:54.550+08:00  INFO 18169 --- [web3-demo] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-26T09:17:54.926+08:00  INFO 18169 --- [web3-demo] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-26T09:17:55.201+08:00  INFO 18169 --- [web3-demo] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T09:17:55.537+08:00  WARN 18169 --- [web3-demo] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-26T09:17:57.193+08:00  INFO 18169 --- [web3-demo] [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2024-12-26T09:17:57.306+08:00  INFO 18169 --- [web3-demo] [Test worker] c.e.w.d.c.Web3ConfigurationTest          : Started Web3ConfigurationTest in 5.871 seconds (process running for 7.235)
+2024-12-26T09:17:58.237+08:00  INFO 18169 --- [web3-demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T09:17:58.241+08:00  INFO 18169 --- [web3-demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-26T09:17:58.247+08:00  INFO 18169 --- [web3-demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-26T09:18:39.781+08:00  INFO 18202 --- [web3-demo] [Test worker] c.e.w.d.c.Web3ConfigurationTest          : Starting Web3ConfigurationTest using Java 21.0.1 with PID 18202 (started by yamingdeng in /Users/yamingdeng/Projects/web3/spring-web3-demo)
+2024-12-26T09:18:39.782+08:00  INFO 18202 --- [web3-demo] [Test worker] c.e.w.d.c.Web3ConfigurationTest          : No active profile set, falling back to 1 default profile: "default"
+2024-12-26T09:18:41.202+08:00  INFO 18202 --- [web3-demo] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-26T09:18:41.233+08:00  INFO 18202 --- [web3-demo] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 JPA repository interfaces.
+2024-12-26T09:18:42.298+08:00  INFO 18202 --- [web3-demo] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-26T09:18:42.418+08:00  INFO 18202 --- [web3-demo] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:web3demo.db user=SA
+2024-12-26T09:18:42.421+08:00  INFO 18202 --- [web3-demo] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-26T09:18:42.788+08:00  INFO 18202 --- [web3-demo] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-26T09:18:43.065+08:00  INFO 18202 --- [web3-demo] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T09:18:43.383+08:00  WARN 18202 --- [web3-demo] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-26T09:18:45.006+08:00  INFO 18202 --- [web3-demo] [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2024-12-26T09:18:45.103+08:00  INFO 18202 --- [web3-demo] [Test worker] c.e.w.d.c.Web3ConfigurationTest          : Started Web3ConfigurationTest in 5.751 seconds (process running for 7.089)
+2024-12-26T09:18:45.961+08:00  INFO 18202 --- [web3-demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T09:18:45.964+08:00  INFO 18202 --- [web3-demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-26T09:18:45.972+08:00  INFO 18202 --- [web3-demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-26T09:33:54.422+08:00  INFO 22022 --- [web3-demo] [Test worker] c.e.w.d.i.Web3ClientServiceTest          : Starting Web3ClientServiceTest using Java 21.0.1 with PID 22022 (started by yamingdeng in /Users/yamingdeng/Projects/web3/spring-web3-demo)
+2024-12-26T09:33:54.424+08:00  INFO 22022 --- [web3-demo] [Test worker] c.e.w.d.i.Web3ClientServiceTest          : No active profile set, falling back to 1 default profile: "default"
+2024-12-26T09:33:56.051+08:00  INFO 22022 --- [web3-demo] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-26T09:33:56.086+08:00  INFO 22022 --- [web3-demo] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 JPA repository interfaces.
+2024-12-26T09:33:57.198+08:00  INFO 22022 --- [web3-demo] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-26T09:33:57.323+08:00  INFO 22022 --- [web3-demo] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:web3demo.db user=SA
+2024-12-26T09:33:57.325+08:00  INFO 22022 --- [web3-demo] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-26T09:33:57.690+08:00  INFO 22022 --- [web3-demo] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-26T09:33:57.969+08:00  INFO 22022 --- [web3-demo] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T09:33:58.907+08:00  WARN 22022 --- [web3-demo] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-26T09:34:00.508+08:00  INFO 22022 --- [web3-demo] [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2024-12-26T09:34:00.628+08:00  INFO 22022 --- [web3-demo] [Test worker] c.e.w.d.i.Web3ClientServiceTest          : Started Web3ClientServiceTest in 6.65 seconds (process running for 8.208)
+2024-12-26T09:34:01.486+08:00  INFO 22022 --- [web3-demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T09:34:01.489+08:00  INFO 22022 --- [web3-demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-26T09:34:01.494+08:00  INFO 22022 --- [web3-demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-26T09:36:08.684+08:00  INFO 22526 --- [web3-demo] [Test worker] c.e.w.d.i.Web3ClientServiceTest          : Starting Web3ClientServiceTest using Java 21.0.1 with PID 22526 (started by yamingdeng in /Users/yamingdeng/Projects/web3/spring-web3-demo)
+2024-12-26T09:36:08.686+08:00  INFO 22526 --- [web3-demo] [Test worker] c.e.w.d.i.Web3ClientServiceTest          : No active profile set, falling back to 1 default profile: "default"
+2024-12-26T09:36:10.125+08:00  INFO 22526 --- [web3-demo] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-26T09:36:10.155+08:00  INFO 22526 --- [web3-demo] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 JPA repository interfaces.
+2024-12-26T09:36:11.244+08:00  INFO 22526 --- [web3-demo] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-26T09:36:11.376+08:00  INFO 22526 --- [web3-demo] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:web3demo.db user=SA
+2024-12-26T09:36:11.379+08:00  INFO 22526 --- [web3-demo] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-26T09:36:11.782+08:00  INFO 22526 --- [web3-demo] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-26T09:36:12.058+08:00  INFO 22526 --- [web3-demo] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T09:36:13.011+08:00  WARN 22526 --- [web3-demo] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-26T09:36:14.240+08:00  INFO 22526 --- [web3-demo] [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2024-12-26T09:36:14.338+08:00  INFO 22526 --- [web3-demo] [Test worker] c.e.w.d.i.Web3ClientServiceTest          : Started Web3ClientServiceTest in 6.1 seconds (process running for 7.472)
+2024-12-26T09:36:15.596+08:00  INFO 22526 --- [web3-demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T09:36:15.602+08:00  INFO 22526 --- [web3-demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-26T09:36:15.608+08:00  INFO 22526 --- [web3-demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
