@@ -16,7 +16,7 @@ class Web3ConfigurationTest {
     private Web3Properties web3Properties;
 
     @Test
-    void web3Properties() {
+    void should_init_properties_correctly() {
         assertEquals("http://localhost:8545/", web3Properties.getUrl());
         assertEquals("31337", web3Properties.getChainId());
     }

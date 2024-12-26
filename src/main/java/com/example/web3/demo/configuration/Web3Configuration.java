@@ -1,6 +1,7 @@
 package com.example.web3.demo.configuration;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +15,7 @@ import java.util.concurrent.ScheduledExecutorService;
 
 @Configuration
 @Slf4j
-public class Web3Configuration {
+public class Web3Configuration implements DisposableBean {
 
     @Autowired
     private Web3Properties web3Properties;
@@ -36,4 +37,8 @@ public class Web3Configuration {
         return web3j;
     }
 
+    @Override
+    public void destroy() throws Exception {
+        web3j().shutdown();
+    }
 }

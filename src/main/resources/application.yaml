@@ -76,4 +76,5 @@ spring:
 web3:
   url: http://localhost:8545/
   chainId: 31337
-  privateKey: ${WEB3_PRIVATE_KEY}
+
+
