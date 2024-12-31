@@ -68,7 +68,7 @@ web3j {
 }
 
 node {
-	nodeProjectDir = file("../solidity-sample001/")
+	nodeProjectDir = file("./node-src")
 }
 
 tasks.named('processResources') {
