@@ -106,4 +106,31 @@ public class UniswapV3PoolContract extends Contract {
         return typedResponse;
     }
 
+    @EqualsAndHashCode(callSuper = true)
+    @Data
+    public static class MintEventResponse extends BaseEventResponse {
+        public String sender;
+        public String owner;
+        public BigInteger tickLower;
+        public BigInteger tickUpper;
+        public BigInteger amount;
+        public BigInteger amount0;
+        public BigInteger amount1;
+    }
+
+    public static MintEventResponse getMintEventFromLog(Log log) {
+        Contract.EventValuesWithLog eventValues = staticExtractEventParametersWithLog(Mint_EVENT, log);
+        MintEventResponse typedResponse = new MintEventResponse();
+        typedResponse.log = log;
+        typedResponse.owner = (String) eventValues.getIndexedValues().get(0).getValue();
+        typedResponse.tickLower = (BigInteger) eventValues.getIndexedValues().get(1).getValue();
+        typedResponse.tickUpper = (BigInteger) eventValues.getIndexedValues().get(2).getValue();
+        //
+        typedResponse.sender = (String) eventValues.getNonIndexedValues().get(0).getValue();
+        typedResponse.amount = (BigInteger) eventValues.getNonIndexedValues().get(1).getValue();
+        typedResponse.amount0 = (BigInteger) eventValues.getNonIndexedValues().get(2).getValue();
+        typedResponse.amount1 = (BigInteger) eventValues.getNonIndexedValues().get(3).getValue();
+        return typedResponse;
+    }
+
 }
