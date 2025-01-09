@@ -203,7 +203,7 @@ public class UniswapV3PoolContract extends Contract {
     }
 
     public static CollectEventResponse getCollectEventFromLog(Log log) {
-        Contract.EventValuesWithLog eventValues = staticExtractEventParametersWithLog(Burn_EVENT, log);
+        Contract.EventValuesWithLog eventValues = staticExtractEventParametersWithLog(Collect_EVENT, log);
         CollectEventResponse typedResponse = new CollectEventResponse();
         typedResponse.log = log;
         typedResponse.owner = (String) eventValues.getIndexedValues().get(0).getValue();
@@ -228,7 +228,7 @@ public class UniswapV3PoolContract extends Contract {
     }
 
     public static FlashEventResponse getFlashEventFromLog(Log log) {
-        Contract.EventValuesWithLog eventValues = staticExtractEventParametersWithLog(Collect_EVENT, log);
+        Contract.EventValuesWithLog eventValues = staticExtractEventParametersWithLog(Flash_EVENT, log);
         FlashEventResponse typedResponse = new FlashEventResponse();
         typedResponse.log = log;
         typedResponse.owner = (String) eventValues.getIndexedValues().get(0).getValue();
