@@ -130,7 +130,7 @@ public class UniswapV3PositionManagerContract extends Contract {
     }
 
     public static CollectEventResponse getCollectEventFromLog(Log log) {
-        EventValuesWithLog eventValues = staticExtractEventParametersWithLog(DecreaseLiquidity_EVENT, log);
+        EventValuesWithLog eventValues = staticExtractEventParametersWithLog(Collect_EVENT, log);
         CollectEventResponse typedResponse = new CollectEventResponse();
         typedResponse.log = log;
         typedResponse.tokenId = (BigInteger) eventValues.getIndexedValues().get(0).getValue();
