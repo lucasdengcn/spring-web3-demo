@@ -49,6 +49,39 @@ public class UniswapV3PoolContract extends Contract {
             )
     );
 
+    public static final Event Burn_EVENT = new Event("Burn",
+            Arrays.<TypeReference<?>>asList(
+                    new TypeReference<Address>(true) {},
+                    new TypeReference<Int24>(true) {},
+                    new TypeReference<Int24>(true) {},
+                    new TypeReference<Uint128>(false) {},
+                    new TypeReference<Uint256>(false) {},
+                    new TypeReference<Uint256>(false) {}
+            )
+    );
+
+    public static final Event Collect_EVENT = new Event("Collect",
+            Arrays.<TypeReference<?>>asList(
+                    new TypeReference<Address>(true) {},
+                    new TypeReference<Address>(false) {},
+                    new TypeReference<Int24>(true) {},
+                    new TypeReference<Int24>(true) {},
+                    new TypeReference<Uint256>(false) {},
+                    new TypeReference<Uint256>(false) {}
+            )
+    );
+
+    public static final Event Flash_EVENT = new Event("Flash",
+            Arrays.<TypeReference<?>>asList(
+                    new TypeReference<Address>(true) {},
+                    new TypeReference<Address>(true) {},
+                    new TypeReference<Uint256>(false) {},
+                    new TypeReference<Uint256>(false) {},
+                    new TypeReference<Uint256>(false) {},
+                    new TypeReference<Uint256>(false) {}
+            )
+    );
+
     public UniswapV3PoolContract(String contractAddress, Web3j web3j, TransactionManager transactionManager, ContractGasProvider gasProvider) {
         super(BINARY, contractAddress, web3j, transactionManager, gasProvider);
     }
@@ -133,4 +166,79 @@ public class UniswapV3PoolContract extends Contract {
         return typedResponse;
     }
 
+    @EqualsAndHashCode(callSuper = true)
+    @Data
+    public static class BurnEventResponse extends BaseEventResponse {
+        public String owner;
+        public BigInteger tickLower;
+        public BigInteger tickUpper;
+        public BigInteger amount;
+        public BigInteger amount0;
+        public BigInteger amount1;
+    }
+
+    public static BurnEventResponse getBurnEventFromLog(Log log) {
+        Contract.EventValuesWithLog eventValues = staticExtractEventParametersWithLog(Burn_EVENT, log);
+        BurnEventResponse typedResponse = new BurnEventResponse();
+        typedResponse.log = log;
+        typedResponse.owner = (String) eventValues.getIndexedValues().get(0).getValue();
+        typedResponse.tickLower = (BigInteger) eventValues.getIndexedValues().get(1).getValue();
+        typedResponse.tickUpper = (BigInteger) eventValues.getIndexedValues().get(2).getValue();
+        //
+        typedResponse.amount = (BigInteger) eventValues.getNonIndexedValues().get(0).getValue();
+        typedResponse.amount0 = (BigInteger) eventValues.getNonIndexedValues().get(1).getValue();
+        typedResponse.amount1 = (BigInteger) eventValues.getNonIndexedValues().get(2).getValue();
+        return typedResponse;
+    }
+
+    @EqualsAndHashCode(callSuper = true)
+    @Data
+    public static class CollectEventResponse extends BaseEventResponse {
+        public String owner;
+        public String recipient;
+        public BigInteger tickLower;
+        public BigInteger tickUpper;
+        public BigInteger amount0;
+        public BigInteger amount1;
+    }
+
+    public static CollectEventResponse getCollectEventFromLog(Log log) {
+        Contract.EventValuesWithLog eventValues = staticExtractEventParametersWithLog(Burn_EVENT, log);
+        CollectEventResponse typedResponse = new CollectEventResponse();
+        typedResponse.log = log;
+        typedResponse.owner = (String) eventValues.getIndexedValues().get(0).getValue();
+        typedResponse.tickLower = (BigInteger) eventValues.getIndexedValues().get(1).getValue();
+        typedResponse.tickUpper = (BigInteger) eventValues.getIndexedValues().get(2).getValue();
+        //
+        typedResponse.recipient = (String) eventValues.getNonIndexedValues().get(0).getValue();
+        typedResponse.amount0 = (BigInteger) eventValues.getNonIndexedValues().get(1).getValue();
+        typedResponse.amount1 = (BigInteger) eventValues.getNonIndexedValues().get(2).getValue();
+        return typedResponse;
+    }
+
+    @EqualsAndHashCode(callSuper = true)
+    @Data
+    public static class FlashEventResponse extends BaseEventResponse {
+        public String owner;
+        public String recipient;
+        public BigInteger amount0;
+        public BigInteger amount1;
+        public BigInteger paid0;
+        public BigInteger paid1;
+    }
+
+    public static FlashEventResponse getFlashEventFromLog(Log log) {
+        Contract.EventValuesWithLog eventValues = staticExtractEventParametersWithLog(Collect_EVENT, log);
+        FlashEventResponse typedResponse = new FlashEventResponse();
+        typedResponse.log = log;
+        typedResponse.owner = (String) eventValues.getIndexedValues().get(0).getValue();
+        typedResponse.recipient = (String) eventValues.getIndexedValues().get(1).getValue();
+        //
+        typedResponse.amount0 = (BigInteger) eventValues.getNonIndexedValues().get(0).getValue();
+        typedResponse.amount1 = (BigInteger) eventValues.getNonIndexedValues().get(1).getValue();
+        typedResponse.paid0 = (BigInteger) eventValues.getNonIndexedValues().get(2).getValue();
+        typedResponse.paid1 = (BigInteger) eventValues.getNonIndexedValues().get(3).getValue();
+        //
+        return typedResponse;
+    }
 }
